@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-app-node
+spec:
+  containers:
+    - name: node-app-cont
+      image: manchi189/ecommerce-web:latest
+      ports:
+        - containerport: 90
