@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: node-app-cont
-      image: muralisocial123/node-app-example:latest
+      image: manchi189/ecommerce-web:latest
       ports:
-        - containerport: 3000
+        - containerport: 90
