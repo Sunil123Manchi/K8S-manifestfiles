@@ -7,4 +7,4 @@ spec:
     - name: node-app-cont
       image: manchi189/ecommerce-web:latest
       ports:
-        - containerport: 90
+        - containerPort: 90
