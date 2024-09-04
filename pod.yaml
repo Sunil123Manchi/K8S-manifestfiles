@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resto-pod
+spec:
+  containers:
+    - name: resto-container
+     image: manchi189/ecommerce-web:latest
+     ports:
+       - containerport: 80
