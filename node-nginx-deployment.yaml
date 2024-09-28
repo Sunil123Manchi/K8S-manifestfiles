@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-np
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-np
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:  
+      containers:
+        - name: my-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-np-svc
+spec:
+  selector:
+    app: my-np
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
