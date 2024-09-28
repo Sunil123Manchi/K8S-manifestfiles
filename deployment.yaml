@@ -5,13 +5,13 @@ metadata:
 spec:
   replicas: 2
   template:
-  metadata:
-    labels:
-      app: my-app
-  spec:
-    containers:
-      - name: resto-web
-        image: manchi189/web-img:latest
-        ports:
-          - containerPort: 80
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: resto-web
+          image: manchi189/web-img:latest
+          ports:
+            - containerPort: 80
   
