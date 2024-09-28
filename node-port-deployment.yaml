@@ -2,10 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node-port-deployment
-  labels:
-    app: ecommerce
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: node
@@ -26,9 +23,9 @@ metadata:
   name: node-port-svc
 spec:
   selector:
-    app: ecommerce
+    app: node
   ports:
     - port: 82
       targetPort: 80
-      potocol:TCP
+      protocol: TCP
   type: NodePort
