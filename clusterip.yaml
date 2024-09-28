@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment-clusterip
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-clusterip
+  template:
+    metadata:
+      labels:
+        app: node-clusterip
+    spec:
+      containers:
+        - name: node-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: node-clusterip
+spec:
+  selector:
+    app: node-clusterip
+  ports:
+    - port: 3000
+      targetPort: 80
+      protocol: TCP
+  type:ClusterIP
