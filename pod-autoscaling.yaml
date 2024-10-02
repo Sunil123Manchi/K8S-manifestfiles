@@ -16,7 +16,7 @@ spec:
         - name: mycont
           image: nginx:latest
           ports:
-            - contanerPort: 80
+            - containerPort: 80
           resources:
             requests:
               cpu: 100m
