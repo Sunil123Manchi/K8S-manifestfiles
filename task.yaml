@@ -3,11 +3,20 @@ kind: Deployment
 metadata:
   name: netflix-deployment
 spec:
-  containers:
-    - name: netflix-cont
-      image: manchi189/netflix:latest
-      ports:
-        - containerPort: 80
+  replicas: 3
+  selector:
+    matchLabels:
+      web: app
+  template:
+    metadata:
+      labels:
+        web: app
+    spec:
+      containers:
+        - name: netflix-cont
+          image: manchi189/netflix:latest
+          ports:
+            - containerPort: 80
 
     
   
