@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: resto-svc
+  name: netflix-svc
 spec:
   selector:
-    web: resto
+    web: app
   ports:
     - port: 81
       targetPort: 80
